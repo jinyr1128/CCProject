@@ -7,7 +7,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class APIFetcher {
-
     private static final String API_URL = "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD";
 
     public static String fetchUSDDate() {
@@ -24,7 +23,15 @@ public class APIFetcher {
         JSONObject jsonObject = fetchJSONObject();
         return jsonObject.getDouble("basePrice");
     }
+    public static double fetchTTBuyingPrice() {
+        JSONObject jsonObject = fetchJSONObject();
+        return jsonObject.getDouble("ttBuyingPrice");
+    }
 
+    public static double fetchTTSellingPrice() {
+        JSONObject jsonObject = fetchJSONObject();
+        return jsonObject.getDouble("ttSellingPrice");
+    }
     private static JSONObject fetchJSONObject() {
         try {
             URL url = new URL(API_URL);

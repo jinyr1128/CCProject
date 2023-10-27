@@ -1,4 +1,3 @@
-
 public class ExchangeRate {
     private double krwRate;
 
